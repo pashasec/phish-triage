@@ -1,0 +1,3 @@
+# Force LF line endings for shell scripts so Linux can execute them
+# regardless of the OS the contributor used.
+*.sh text eol=lf

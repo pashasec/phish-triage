@@ -23,27 +23,43 @@ That's 10–20 minutes per email, and most of it is mechanical. SOAR platforms a
 $ phish-triage suspicious.eml
 ```
 
-## Install
+## Quickstart (zero setup)
 
-Requires Python 3.9+.
+Requires Python 3.9+. Three commands and you have a triage report:
 
 ```bash
 git clone https://github.com/pashasec/phish-triage.git
 cd phish-triage
-pip install -e .
+./run.sh tests/fixtures/sample-phish.eml --no-enrich
 ```
 
-The `.` at the end is required — it tells pip to install the current directory as a package. After this, the `phish-triage` command is on your `PATH`.
+That's it. `run.sh` creates a virtualenv on first call, installs deps, runs the tool, and is idempotent — subsequent calls just run.
 
-> PyPI release is planned; for now install from source.
+Windows users:
 
-## Quickstart
+```cmd
+git clone https://github.com/pashasec/phish-triage.git
+cd phish-triage
+run.bat tests\fixtures\sample-phish.eml --no-enrich
+```
+
+The script writes `report-<subject>.md` and `iocs-<subject>.csv` to the current directory, prints a terminal summary, and exits with code `2` when the verdict is `likely-phishing` or `confirmed-phishing` (useful for piping into mail-gateway hooks).
+
+### Install as a command (optional)
+
+If you want `phish-triage` on your `PATH` instead of running via `./run.sh`:
 
 ```bash
+# Recommended: pipx (managed venv, command available everywhere)
+pipx install -e .
+
+# Or: classic virtualenv
+python3 -m venv .venv && source .venv/bin/activate
+pip install -e .
 phish-triage tests/fixtures/sample-phish.eml
 ```
 
-Outputs `report-<subject-slug>.md` and `iocs-<subject-slug>.csv` in the current directory, prints a terminal summary, and exits with code `2` when the verdict is `likely-phishing` or `confirmed-phishing` (useful for piping into mail-gateway hooks).
+> PyPI release is planned; for now install from source.
 
 ### Optional enrichment
 
