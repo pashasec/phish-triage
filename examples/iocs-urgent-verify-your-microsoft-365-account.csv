@@ -1,0 +1,14 @@
+type,value,context,source_verdict
+email,billing@micros0ft-verify.com,From header,confirmed-phishing
+domain,micros0ft-verify.com,sender domain,confirmed-phishing
+ip,185.220.101.42,Received hop 1,confirmed-phishing
+ip,45.142.214.99,Received hop 2,confirmed-phishing
+url,https://micros0ft-verify.com/login?u=user,body (html-href),confirmed-phishing
+domain,micros0ft-verify.com,URL host,confirmed-phishing
+url,https://bit.ly/3xK9aZQ,body (html-href),confirmed-phishing
+domain,bit.ly,URL host,confirmed-phishing
+url,https://legit-cdn.net/tracker.gif,body (html-href),confirmed-phishing
+domain,legit-cdn.net,URL host,confirmed-phishing
+sha256,d43e2d14ea747523ecc0c908ae1bc1848ceac7b4a267a81148220e8c70466ad0,attachment invoice.html,confirmed-phishing
+sha1,c6e43101aa5a9a1b41c9b6015b0318c43a622d67,attachment invoice.html,confirmed-phishing
+md5,e8dcba51e734283e32d8ce0b5e4be68a,attachment invoice.html,confirmed-phishing

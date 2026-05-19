@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "phish-triage"
+version = "0.1.0"
+description = "Turn a .eml file into a complete phishing incident report in 30 seconds."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [{ name = "pashasec" }]
+keywords = ["security", "soc", "phishing", "incident-response", "blue-team", "dfir"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Security",
+]
+dependencies = [
+    "typer>=0.9.0",
+    "rich>=13.0.0",
+    "beautifulsoup4>=4.12.0",
+    "python-whois>=0.9.0",
+    "requests>=2.31.0",
+    "tldextract>=5.0.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4.0"]
+
+[project.scripts]
+phish-triage = "phish_triage.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/pashasec/phish-triage"
+Issues = "https://github.com/pashasec/phish-triage/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["phish_triage"]

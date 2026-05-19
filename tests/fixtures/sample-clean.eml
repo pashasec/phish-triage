@@ -1,0 +1,23 @@
+Return-Path: <noreply@github.com>
+Received: from out-26.smtp.github.com (out-26.smtp.github.com [192.30.252.197])
+	by mx.victim-corp.com (Postfix) with ESMTPS id A1B2C3D4
+	for <user@victim-corp.com>; Mon, 18 May 2026 09:01:23 +0000 (UTC)
+Authentication-Results: mx.victim-corp.com;
+	spf=pass smtp.mailfrom=github.com;
+	dkim=pass header.d=github.com;
+	dmarc=pass header.from=github.com
+Message-ID: <gh.notify.20260518.xyz@github.com>
+Date: Mon, 18 May 2026 09:01:22 +0000
+From: "GitHub" <noreply@github.com>
+To: user@victim-corp.com
+Subject: [pashasec/search-cve] PR #42 was merged
+MIME-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+
+Hi,
+
+Your pull request #42 in pashasec/search-cve was merged.
+
+View it here: https://github.com/pashasec/search-cve/pull/42
+
+— The GitHub team

