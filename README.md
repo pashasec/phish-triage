@@ -25,17 +25,17 @@ $ phish-triage suspicious.eml
 
 ## Install
 
-```bash
-pip install phish-triage
-```
-
-Or from source:
+Requires Python 3.9+.
 
 ```bash
-git clone https://github.com/pashasec/phish-triage
+git clone https://github.com/pashasec/phish-triage.git
 cd phish-triage
 pip install -e .
 ```
+
+The `.` at the end is required â€” it tells pip to install the current directory as a package. After this, the `phish-triage` command is on your `PATH`.
+
+> PyPI release is planned; for now install from source.
 
 ## Quickstart
 
@@ -98,7 +98,7 @@ The IOC CSV is one row per indicator (`type, value, context, source_verdict`) â€
 ## CLI
 
 ```
-Usage: phish-triage triage [OPTIONS] EML
+Usage: phish-triage [OPTIONS] EML
 
   Triage a single .eml file end-to-end.
 
@@ -110,6 +110,7 @@ Options:
   --expand / --no-expand       Expand shortened URLs via HEAD  [default: expand]
   --enrich / --no-enrich       Run external API enrichment when keys are set  [default: enrich]
   -q, --quiet                  Suppress the terminal summary
+  --version                    Show version and exit
 ```
 
 Exit codes:
@@ -120,7 +121,7 @@ Exit codes:
 
 ```bash
 # Postfix content_filter, Sieve filter, etc.
-phish-triage --quiet --no-enrich "$EML_FILE" --out /var/log/phish
+phish-triage "$EML_FILE" --quiet --no-enrich --out /var/log/phish
 if [ $? -eq 2 ]; then
     mv "$EML_FILE" /var/quarantine/
 fi

@@ -39,6 +39,12 @@ app = typer.Typer(
 console = Console()
 
 
+def _version_callback(value: bool) -> None:
+    if value:
+        console.print(f"phish-triage {__version__}")
+        raise typer.Exit()
+
+
 def _safe_slug(text: str, fallback: str) -> str:
     text = text.strip().lower() or fallback
     text = re.sub(r"[^a-z0-9]+", "-", text)[:60].strip("-")
@@ -111,6 +117,9 @@ def triage(
     expand_shortened: bool = typer.Option(True, "--expand/--no-expand", help="Expand shortened URLs via HEAD"),
     enrich: bool = typer.Option(True, "--enrich/--no-enrich", help="Run external API enrichment when keys are set"),
     quiet: bool = typer.Option(False, "--quiet", "-q", help="Suppress the terminal summary"),
+    _version: bool = typer.Option(
+        False, "--version", callback=_version_callback, is_eager=True, help="Show version and exit"
+    ),
 ) -> None:
     """Triage a single .eml file end-to-end."""
     parsed = parse_eml(eml)
@@ -229,12 +238,6 @@ def triage(
 
     if verdict.severity in ("likely-phishing", "confirmed-phishing"):
         sys.exit(2)
-
-
-@app.command()
-def version() -> None:
-    """Print the version."""
-    console.print(f"phish-triage {__version__}")
 
 
 if __name__ == "__main__":
