@@ -6,6 +6,8 @@
 
 Works fully offline. API enrichment is opt-in — set whichever keys you have.
 
+![phish-triage demo](docs/demo.png)
+
 ---
 
 ## Why
